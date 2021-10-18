@@ -60,7 +60,7 @@ describe("Club Login", { retries: { runMode: 2, openMode: 2 } }, () => {
       cy.contains("ACCEPT TOATE").click();
 
       ///Check response on entering invalid username and password test-2
-      cy.get(Field1)
+      cy.get("[data-cy=email]")
         .clear()
         .type("gfttest.prod@gmail.com");
       cy.get(Field2).type("*******");
@@ -72,7 +72,7 @@ describe("Club Login", { retries: { runMode: 2, openMode: 2 } }, () => {
       cy.document().toMatchImageSnapshot({ name: "Error message 1 Login" });
 
       ///Check response on entering invalid username and valid password test-3
-      cy.get(Field2)
+      cy.get("[data-cy=email]")
         .clear()
         .type("fttest.prod02@gmail.com");
       cy.get(Field3).type("*******");
@@ -83,7 +83,7 @@ describe("Club Login", { retries: { runMode: 2, openMode: 2 } }, () => {
       cy.document().toMatchImageSnapshot({ name: "Error message 2 Login" });
 
       ///Check response on entering valid username and invalid password test-4
-      cy.get(Field2)
+      cy.get("[data-cy=email]")
         .clear()
         .type("gfttest.prod02@gmail.com");
       cy.get(Field3)
