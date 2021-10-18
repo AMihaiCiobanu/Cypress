@@ -96,7 +96,7 @@ describe("Club Login", { retries: { runMode: 2, openMode: 2 } }, () => {
       cy.document().toMatchImageSnapshot({ name: "Error message 3 Login" });
 
       ///Check response on entering invalid username and valid password test-5
-      cy.get(Field2)
+      cy.get("[data-cy=email]")
         .clear()
         .type("gfttest.prod02@gmail.com");
       cy.get(Field3)
