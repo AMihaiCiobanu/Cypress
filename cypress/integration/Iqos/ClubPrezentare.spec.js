@@ -127,7 +127,7 @@ describe("Club Login", { retries: { runMode: 2, openMode: 2 } }, () => {
       cy.document().toMatchImageSnapshot({ name: "Error message 6 Login" });
 
       ///Check response when username field is empty and login is pressed test-8
-      cy.get(Field2).clear();
+      cy.get("[data-cy=email]").clear();
       cy.get(Field3)
         .clear()
         .type("*******");
